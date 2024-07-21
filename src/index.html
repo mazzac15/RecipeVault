@@ -4,21 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipe Vault | Home</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css" />
     <script type="module" src="./js/main.js"></script>
   </head>
   <body>
     <header>
-      <nav>
-        <a id="menu"></a>
+      <div class="header-top">
         <a id="logo_link" href="/index.html">
-          <img
-            class="logo"
-            src="/images/recipeVaultLogoYellow.png"
-            alt="logo"
-          />
+          <img class="logo" src="/images/recipeVaultLogoYellow.png" alt="logo"/>
         </a>
-        <ul class="navigation">
+        <h1>Recipe Vault</h1>
+        <form>
+          <input type="text" placeholder="Search for recipes..." class="searchBox">
+          <button type="submit" class="searchBtn">Search</button>
+        </form>
+      </div>
+      <div class="navigation-menu"></div>
+      <nav class="navigation">
+        <ul>
           <li class="active"><a href="#">Home</a></li>
           <li><a href="/collections/index.html">Collections</a></li>
           <li><a href="/search/index.html">Search</a></li>
@@ -26,13 +30,50 @@
           <li><a href="/recipe-detail/index.html">Recipe</a></li>
         </ul>
       </nav>
-      <div class="logo">
-        <a href="/index.html"></a>
-        <!-- hamburger menu -->
-      </div>
     </header>
     <main>
-      <section class="recipe-container"></section>
+      <div class="home-container">
+        <div class="home-header">
+          <h1></h1> 
+        </div>
+        <div class="home-recipe-content">
+          <span class="screenreader-only"></span>
+          <div class="recipe-container">
+            <section class="recipe">
+              <ul class="recipe-items">
+                <li class="recipe-item">
+                  <a href="">
+                    <div class="recipe-item-img-wrapper">
+                      <div class="recipe-item-img">
+                        <picture>
+                          <source srcset="">
+                          <img>
+                        </picture>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+
+      </div>
+      <!-- <section>
+        <div class="featured-recipe-container">
+          <h2>Featured Recipe</h2>
+          <div class="featured-recipe-content">
+            <a class="featured-recipe-link" href="">
+              <div class="featured-img">
+                <picture>
+                  <source srcset="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/13385.jpg?resize=300:*&output-format=auto&output-quality=auto 300w, https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/13385.jpg?resize=600:*&output-format=auto&output-quality=auto 600w">
+                  <img class="featured-image" alt height loading="eager" fetchpriority="auto" sizes="(min-width: 52rem) 600px, 300px" src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/13385.jpg?resize=300:*&output-format=jpg&output-quality=auto">
+                </picture>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section> -->
     </main>
     <footer>
       <p>Contact: maz22004@byui.edu</p>

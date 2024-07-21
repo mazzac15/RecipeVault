@@ -1,4 +1,8 @@
-// Get Date //
-const currentYearElement = document.getElementById("currentYear");
-const currentYear = new Date().getFullYear();
-currentYearElement.textContent = currentYear;
+import { initializeHeaderFooter } from "./utils.mjs";
+
+document.addEventListener("DOMContentLoaded", () => {
+    initializeHeaderFooter();
+});
+
+
+
