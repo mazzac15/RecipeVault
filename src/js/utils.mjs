@@ -12,12 +12,23 @@ export function setupSearchButton() {
 }
 
 export function setupHamburgerMenu() {
-    const hambutton = document.querySelector(".navigation-menu");
-    const mainnav = document.querySelector("nav ul");
-    if (hambutton && mainnav) {
-        hambutton.addEventListener("click", () => {
-            mainnav.classList.toggle("open");
-            hambutton.classList.toggle("open");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const sidenav = document.querySelector(".sidenav");
+    const main = document.querySelector("main");
+    const header = document.querySelector("header");
+    const footer = document.querySelector("footer");
+    if (menuToggle && sidenav) {
+        menuToggle.addEventListener("click", () => {
+            const isOpen = sidenav.classList.toggle("open");
+            if (isOpen) {
+                main.style.marginLeft = "250px";
+                header.style.marginLeft = "250px";
+                footer.style.marginLeft = "250px";
+            } else {
+                main.style.marginLeft = "0";
+                header.style.marginLeft = "0";
+                footer.style.marginLeft = "0";
+            }
         });
     }
 }
