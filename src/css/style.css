@@ -112,6 +112,57 @@ header h1 {
 main {
   transition: margin-left 0.5s;
 }
+/*home page featured recipes*/
+.featured-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.featured-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.featured-item img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.featured-item h2 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.featured-item p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  color: var(--primary-color);
+}
+
+.featured-item a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  background-color: var(--accent-color1);
+  color: white;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.featured-item a:hover {
+  background-color: var(--accent-color2);
+}
 
 form input[type="text"] {
   flex-grow: 1;
@@ -150,11 +201,14 @@ form button[type="submit"]:hover {
   border-radius: 8px;
   padding: 1rem;
   text-align: center;
+  background-color: white;
 }
 
 .recipe-card img {
   max-width: 100%;
+  min-height: 150px;
   border-radius: 8px;
+  object-fit: cover;
 }
 
 .recipe-card h3 {
@@ -171,32 +225,38 @@ form button[type="submit"]:hover {
 
 /* Recipe Details */
 .recipe-details {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 6rem;
+  padding: 6rem;
 }
 
-#recipe-details img {
-  max-width: 100%;
+.recipe-details img {
+  max-width: 50%;
   border-radius: 8px;
   margin-bottom: 1rem;
 }
 
-#recipe-details h2 {
+.recipe-details h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
-#recipe-details h3 {
+.recipe-details h3 {
   font-size: 1.5rem;
   margin-top: 1.5rem;
 }
 
-#recipe-details ul {
+.recipe-details ul {
   margin-top: 0.5rem;
 }
 
-#recipe-details ol {
+.recipe-details ol {
   margin-top: 0.5rem;
 }
 
@@ -213,6 +273,7 @@ footer {
 }
 
 /* Responsive Code */
+/* @media screen and (max-width: ) */
 @media screen and (max-width: 600px) {
   .header {
     flex-direction: column;
@@ -223,6 +284,10 @@ footer {
     font-size: 8vw;
     text-align: center;
     margin-left: 0;
+  }
+
+  .featured-container {
+    grid-template-columns: 1fr;
   }
 
   .sidenav {
@@ -251,5 +316,10 @@ footer {
   .logo {
     width: 100px;
     margin-bottom: 10px;
+  }
+
+  .recipe-details {
+    margin: 2rem;
+    padding: 2rem;
   }
 }

@@ -1,4 +1,5 @@
 
+//header and footer templates//
 export function renderListWithTemplate(
     templateFn,
     parentElement,
@@ -185,3 +186,60 @@ export function displayRecipeDetails(recipe) {
     });
 }
 
+//Featured recipe home page//
+export async function fetchFeaturedRecipes() {
+    const url = `https://tasty.p.rapidapi.com/feeds/list?size=5&timezone=%2B0700&vegetarian=false&from=0`
+    const options = {
+        method: "GET",
+        headers: {
+            "x-rapidapi-key": "97bdfcfb35mshee066a5fa7f7cc3p158394jsned4965d6ab2b",
+            "x-rapidapi-host": "tasty.p.rapidapi.com"
+        }
+    };
+
+    try {
+        const response = await fetch(url, options);
+        if (!response.ok) {
+            throw new Error("Network response was not okay");
+        }
+        const result = await response.json();
+        console.log("Fetched data: ", result);
+        return result.results;
+    } catch (error) {
+        console.error("fetch error:", error);
+        return [];
+    }
+}
+
+export function displayFeaturedRecipes(featuredRecipes) {
+    const featuredContainer = document.querySelector(".featured-container")
+    if (!featuredContainer) return;
+
+    featuredContainer.innerHTML = ""; //clear previous content
+
+    console.log("Featured recipe data: ", featuredRecipes)
+
+    featuredRecipes.forEach(featuredItem => {
+        if (featuredItem.type === "item" && featuredItem.item) {
+            const recipe = featuredItem.item;
+            const recipeCard = document.createElement("div");
+            recipeCard.classList.add("featured-item");
+
+            // const thumbnailUrl = recipe.thumbnail_urls ? recipe.thumbnail_urls[0] : "";
+
+            const featuredContent = `
+                <div class="featured-content">
+                    <img src="${recipe.thumbnail_url}" alt="${recipe.name}">
+                    <h2>${recipe.name}</h2>
+                    <p>${recipe.description || ""}</p>
+                    <a href="/recipe-detail/index.html?id=${recipe.id}" target="_blank">View Recipe Directions</a>
+                </div>
+            `;
+  
+            recipeCard.innerHTML = featuredContent;
+            featuredContainer.appendChild(recipeCard);
+        }
+    });
+}
+
+  
