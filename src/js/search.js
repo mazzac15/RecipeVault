@@ -1,12 +1,11 @@
 import {
-  initializeHeaderFooter,
+  loadHeaderFooter,
   fetchRecipes,
   displaySearchResults,
 } from "./utils.mjs";
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Initialize header and footer
-  initializeHeaderFooter();
+  loadHeaderFooter();
 
   // Set up search functionality
   const searchBtn = document.querySelector(".searchBtn");

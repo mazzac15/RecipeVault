@@ -1,12 +1,11 @@
 import {
-  initializeHeaderFooter,
+  loadHeaderFooter,
   fetchRecipeById,
   displayRecipeDetails,
 } from "./utils.mjs";
 
 document.addEventListener("DOMContentLoaded", async () => {
-  // Initialize header and footer
-  initializeHeaderFooter();
+  await loadHeaderFooter();
 
   const urlParams = new URLSearchParams(window.location.search);
   const recipeId = urlParams.get("id");

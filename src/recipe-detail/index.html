@@ -12,46 +12,43 @@
     <script type="module" src="/js/recipeDetail.js"></script>
   </head>
   <body>
-    <header>
-      <div class="header-top">
-        <a id="logo_link" href="/index.html">
-          <img
-            class="logo"
-            src="/images/recipeVaultLogoYellow.png"
-            alt="logo"
-          />
-        </a>
-        <h1>The Recipe Vault</h1>
-      </div>
-      <div class="navigation-menu"></div>
-      <nav class="navigation">
-        <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/collections/index.html">Collections</a></li>
-          <li><a href="/search/index.html">Search</a></li>
-          <li><a href="/profile/index.html">Profile</a></li>
-          <li class="active"><a href="#">Recipe</a></li>
-        </ul>
-      </nav>
+    <header id="main-header">
+      <!-- Using templates in /partials/header.html -->
     </header>
     <main>
-      <section class="recipe-details">
-        <h2 id="recipe-title"></h2>
-        <img id="recipe-image" alt="Recipe Image" />
-        <h3>Ingredients</h3>
-        <ul id="recipe-ingredients"></ul>
-        <h3>Instructions</h3>
-        <ol id="recipe-instructions"></ol>
-      </section>
+      <div class="home-container">
+        <nav class="sidenav">
+          <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/collections/index.html">Collections</a></li>
+            <li><a href="/search/index.html">Search</a></li>
+            <li><a href="/profile/index.html">Profile</a></li>
+            <!-- <li class="active"><a href="/recipe-detail/index.html">Recipe</a></li> -->
+          </ul>
+        </nav>
+        <section class="content">
+          <form>
+            <input
+              type="text"
+              placeholder="Search for recipes..."
+              class="searchBox"
+            />
+            <button type="submit" class="searchBtn">Search</button>
+          </form>
+          <div class="recipe-container"></div>
+        </section>
+        <section class="recipe-details">
+          <h2 id="recipe-title"></h2>
+          <img id="recipe-image" alt="Recipe Image" />
+          <h3>Ingredients</h3>
+          <ul id="recipe-ingredients"></ul>
+          <h3>Instructions</h3>
+          <ol id="recipe-instructions"></ol>
+        </section>
+      </div>
     </main>
-    <footer>
-      <p>Contact: maz22004@byui.edu</p>
-      <p>Project for WDD 330</p>
-      <p>
-        &#169;<span id="currentYear"></span
-        ><span id="studentName"> Cindy Mazza</span>
-      </p>
-      <p><span id="lastModified"></span></p>
+    <footer id="main-footer">
+      <!-- Using templates in /partials/footer.html -->
     </footer>
   </body>
 </html>
