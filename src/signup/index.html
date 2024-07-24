@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Vault | Signup</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script type="module" src="/js/signup.js"></script>
+  </head>
+  <body>
+    <header id="main-header">
+      <!-- Using templates in /partials/header.html -->
+    </header>
+    <main>
+      <div class="home-container">
+        <nav class="sidenav">
+          <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/search/index.html">Search</a></li>
+            <li><a href="/profile/index.html">Profile</a></li>
+            <li><a href="/login/index.html">Login</a></li>
+            <li class="active"><a href="#">Signup</a></li>
+          </ul>
+        </nav>
+        <div class="loginSignup-container">
+          <div class="signup-container">
+            <form class="signup-form">
+              <h1>Sign Up</h1>
+              <div>
+                <input
+                  type="email"
+                  id="signup-email"
+                  autofocus
+                  placeholder="Email"
+                  required
+                />
+              </div>
+              <div>
+                <input
+                  type="password"
+                  id="signup-password"
+                  autofocus
+                  placeholder="Password"
+                  required
+                />
+              </div>
+              <div>
+                <input
+                  type="password"
+                  id="signup-confirm-password"
+                  autofocus
+                  placeholder="Confirm Password"
+                  required
+                />
+              </div>
+              <button type="submit">Sign Up</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer id="main-footer">
+      <!-- Using templates in /partials/footer.html -->
+    </footer>
+  </body>
+</html>

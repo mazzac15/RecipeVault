@@ -242,4 +242,25 @@ export function displayFeaturedRecipes(featuredRecipes) {
     });
 }
 
+// export async function fetchTags(){
+//     const url = "https://tasty.p.rapidapi.com/tags/list";
+// const options = {
+// 	method: "GET",
+// 	headers: {
+// 		"x-rapidapi-key": "97bdfcfb35mshee066a5fa7f7cc3p158394jsned4965d6ab2b",
+// 		"x-rapidapi-host": "tasty.p.rapidapi.com"
+// 	}
+// };
+
+// try {
+// 	const response = await fetch(url, options);
+// 	const result = await response.text();
+// 	console.log(result);
+// } catch (error) {
+// 	console.error(error);
+//     return [];
+// }
+// }
+   
+
   
