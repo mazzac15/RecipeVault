@@ -16,7 +16,7 @@ document.getElementById("signup-form").addEventListener("submit", (event) => {
     // Save user data in localStorage
     localStorage.setItem("user", JSON.stringify({ email, password }));
     alert("Sign up successful");
-    // Redirect or show a different page
+    // Redirect to home page
     window.location.href = "/index.html";
   } else {
     alert("Passwords do not match");

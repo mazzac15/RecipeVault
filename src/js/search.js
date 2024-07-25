@@ -15,17 +15,17 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     const query = searchBox.value.trim();
     if (!query) {
-      console.log("Please enter a search term.");
+      // console.log("Please enter a search term.");
       return;
     }
 
-    console.log(`Searching for recipes with: ${query}`);
+    // console.log(`Searching for recipes with: ${query}`);
     try {
       const recipes = await fetchRecipes(query);
-      console.log("Search results:", recipes);
+      // console.log("Search results:", recipes);
       displaySearchResults(recipes);
     } catch (error) {
-      console.error("Error fetching recipes:", error);
+      // console.error("Error fetching recipes:", error);
     }
   });
 });

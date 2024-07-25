@@ -9,7 +9,7 @@
   /* colors */
   --primary-color: #0d3b66;
   --secondary-color: #faf0ca;
-  --accent-color1: #f95738;
+  --accent-color1: #031729;
   --accent-color2: #ee964b;
   --accent-color3: #f4d35e;
   /* sizes */
@@ -30,7 +30,7 @@ body {
 
 /*header*/
 header {
-  background-color: #031729;
+  background-color: var(--accent-color1);
   padding: 40px;
   position: relative;
   color: white;
@@ -172,12 +172,22 @@ main {
   background-color: var(--accent-color2);
 }
 /*search*/
-.search-container {
+.search-form {
   background-color: var(--primary-color);
   padding: 2rem;
+  display: flex;
+  align-items: center;
+  width: 80vw;
+  margin: 1rem auto;
   border-radius: 8px;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
 }
+
+.login-container input,
+.signup-container input {
+  margin-bottom: 1rem;
+}
+
 form input[type="text"],
 form input[type="password"],
 form input[type="email"] {
@@ -190,7 +200,6 @@ form input[type="email"] {
   border: 1px solid #dddddd;
   outline: none;
   background: #eeeeee;
-  margin-bottom: 1rem;
   transition:
     background 0.2s,
     border-color 0.2s;
@@ -234,6 +243,8 @@ form button[type="submit"]:hover {
   padding: 1rem;
   text-align: center;
   background-color: white;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .recipe-card img {
@@ -248,11 +259,43 @@ form button[type="submit"]:hover {
   margin: 0.5rem 0;
 }
 
+.recipe-card .remove-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 .recipe-card a {
   display: block;
   margin-top: 0.5rem;
   text-decoration: none;
   color: #007bff;
+}
+
+.favorite-button {
+  background: none;
+  border: none;
+  color: #343333;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  transition: color 0.3s ease;
+}
+
+.favorite-button.active .heart-icon{
+  color: red;
+}
+
+.heart-icon {
+  font-family: "Arial", sans-serif;
 }
 
 /* Recipe Details */
@@ -292,6 +335,8 @@ form button[type="submit"]:hover {
   margin-top: 0.5rem;
 }
 
+/*favorites*/
+
 /*login*/
 .login-container form button,
 .signup-container form button {
@@ -311,8 +356,7 @@ form button[type="submit"]:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 400px;
-  max-width: 400px;
+  width: 60vw;
   margin: 1rem;
   padding: 2rem;
   border-radius: 8px;

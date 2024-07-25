@@ -11,7 +11,6 @@ export default defineConfig({
         main: resolve(__dirname, "src/index.html"),
         search: resolve(__dirname, "src/search/index.html"),
         recipe: resolve(__dirname, "src/recipe-detail/index.html"),
-        profile: resolve(__dirname, "src/profile/index.html"),
         login: resolve(__dirname, "src/login/index.html"),
         signup: resolve(__dirname, "src/signup/index.html"),
       },

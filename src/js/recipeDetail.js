@@ -11,19 +11,19 @@ document.addEventListener("DOMContentLoaded", async () => {
   const recipeId = urlParams.get("id");
 
   if (!recipeId) {
-    console.log("No recipe ID found in URL");
+    // console.log("No recipe ID found in URL");
     return;
   }
 
   try {
-    const recipe = await fetchRecipeById(recipeId); // Fetch recipe by id
-    console.log("fetched recipe details:", recipe);
+    const recipe = await fetchRecipeById(recipeId);
+    // console.log("fetched recipe details:", recipe);
     if (recipe) {
       displayRecipeDetails(recipe);
     } else {
-      console.error("Recipe not found");
+      // console.error("Recipe not found");
     }
   } catch (error) {
-    console.error("Error fetching recipe details:", error);
+    // console.error("Error fetching recipe details:", error);
   }
 });

@@ -34,7 +34,7 @@ export function renderListWithTemplate(
     return template;
   }
   
-  // function to dynamically load the header and footer into a page
+// function to dynamically load the header and footer into a page //
   export async function loadHeaderFooter() {
     const headerTemplate = await loadTemplate("../partials/header.html");
     const headerElement = document.querySelector("#main-header");
@@ -81,7 +81,7 @@ export function setupHamburgerMenu() {
     }
 }
 
-//footer//
+// footer //
 export function setCurrentYear() {
     const currentYearElement = document.getElementById("currentYear");
     if (currentYearElement) {
@@ -90,7 +90,7 @@ export function setCurrentYear() {
     }
 }
 
-//initialize header and footer//
+// initialize header and footer //
 export function initializeHeaderFooter() {
     setCurrentYear();
     setupSearchButton();
@@ -138,11 +138,14 @@ export function displaySearchResults(recipes) {
             <img src="${recipe.thumbnail_url}" alt="${recipe.name}" />    
             <h3>${recipe.name}</h3>
             <a href="/recipe-detail/index.html?id=${recipe.id}" target="_blank">View Recipe</a>
+            <button class="favorite-button" data-id="recipe-id">
+            <span class="heart-icon">&#9825;</span></button>
         `;
         recipeContainer.appendChild(recipeCard);
     });
 }
 
+// fetch recipe by id for details //
 export async function fetchRecipeById(id) {
     const url = `https://tasty.p.rapidapi.com/recipes/get-more-info?id=${encodeURIComponent(id)}`;
     const options = {
@@ -166,6 +169,7 @@ export async function fetchRecipeById(id) {
         return null;
     }
 }
+
 // Display recipe details //
 export function displayRecipeDetails(recipe) {
     document.getElementById("recipe-title").textContent = recipe.name;
@@ -210,7 +214,7 @@ export async function fetchFeaturedRecipes() {
         return [];
     }
 }
-
+//display featured recipes//
 export function displayFeaturedRecipes(featuredRecipes) {
     const featuredContainer = document.querySelector(".featured-container")
     if (!featuredContainer) return;
@@ -241,6 +245,3 @@ export function displayFeaturedRecipes(featuredRecipes) {
         }
     });
 }
-
-
-  
